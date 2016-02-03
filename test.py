@@ -1,10 +1,8 @@
 from gpiozero import PiLiter
-from time import sleep
+from signal import pause
 
 lite = PiLiter()
 
-while True:
-    lite.on()
-    sleep(1)
-    lite.off()
-    sleep(1)
+lite.blink()
+
+pause()
