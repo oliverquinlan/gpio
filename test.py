@@ -1,8 +1,11 @@
 from gpiozero import PiLiter
-from signal import pause
+from time import sleep
 
 lite = PiLiter()
+lite.off()
 
-lite.blink()
-
-pause()
+while True:
+    for led in lite.leds:
+        led.on()
+        sleep(0.1)
+        led.off()
